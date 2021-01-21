@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  padding: 10px;
+  // width: 100%;
+  height: 100vh;
+  --chateau_green: #4CB050;
+  --dodger_blue: #0EA4FD;
+  --orange: #FE5722;
+  --amber: #FEC108;
+  --roman_coffee: #795547;
+  --pomegranate: #F44235;
+  --san_marino: #4051B3;
+  --amaranth: #E72063;
+  --seance: #9C28B1;
+  --dodger_blue_dark: #2296F3;
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 20vw);
+  grid-gap: 20px;
+  grid-template-areas: "menu menu wi-fi wi-fi"
+                       "menu menu tv map"
+                       "telegram telegram tv bed"
+                       "telegram telegram bluetooth bed"
+                       "battery battery battery screen"
+                       "radio radio radio radio";
+}
+
+.grid-elem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px gray;
+  border-radius: 3px;
+}
+.menu {
+  grid-area: menu;
+  background-color: var(--chateau_green);
+}
+.telegram {
+  grid-area: telegram;
+  background-color: var(--orange);
+}
+.wi-fi {
+  grid-area: wi-fi;
+  background-color: var(--dodger_blue);
+}
+.tv {
+  grid-area: tv;
+  background-color: var(--amber);
+}
+.map {
+  grid-area: map;
+  background-color: var(--roman_coffee);
+}
+.bluetooth {
+  grid-area: bluetooth;
+  background-color: var(--pomegranate);
+}
+.bed {
+  grid-area: bed;
+  background-color: var(--san_marino);
+}
+.battery {
+  grid-area: battery;
+  background-color: var(--amaranth);
+}
+.screen {
+  grid-area: screen;
+  background-color: var(--seance);
+}
+.radio {
+  grid-area: radio;
+  background-color: var(--dodger_blue_dark);
+}
+
+@media (max-width: 419px) {
+  .wrapper {
+    grid-template-rows: repeat(10, 100px);
+    grid-template-areas: "menu menu menu menu"
+                         "wi-fi wi-fi wi-fi wi-fi"
+                         "telegram telegram telegram telegram"
+                         "tv tv tv tv"
+                         "map map map map"
+                         "bluetooth bluetooth bluetooth bluetooth"
+                         "bed bed bed bed"
+                         "battery battery battery battery"
+                         "screen screen screen screen"
+                         "radio radio radio radio";
+  }
+}
